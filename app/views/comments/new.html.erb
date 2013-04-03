@@ -1,0 +1,12 @@
+<% provide :title, 'Comments' %>
+
+<h1>Wicked Science News</h1>
+
+<h2>@article.title</h2>
+<h3>@article.author</h3>
+
+<%= @comment.label :text %>
+<%= @comment.text_field :text %>
+<%= f.submit :class => 'btn btn-primary' %>
+
+

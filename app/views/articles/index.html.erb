@@ -1,0 +1,27 @@
+<% provide :title, 'Home' %>
+
+<h1>Wicked Science News</h1>
+
+<h2>A user contributed collection of interesting science stories</h2>
+
+<table class="table">
+  <tr>
+    <td>Title</td>
+    <td>Author</td>
+    <td>Link</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.title %></td>
+      <td><%= article.author %></td>
+      <td><%= article.link %></td>
+      <td><%= link_to 'Comment', new_comment_path, :class => 'btn btn-primary' %></td>
+      <td><%= link_to 'Edit', edit_article_path(article), :class => 'btn btn-primary' %></td>
+      <td><%= link_to 'Delete', article, :class => 'btn btn-primary', :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to 'Add article', new_article_path, :class => 'btn btn-primary' %></p>

@@ -1,0 +1,22 @@
+<% if @article.errors.any? %>
+  <div class="alert alert-error">
+    <h3>Loser!  How hard is it to fill in ALL the blanks?</h3>
+    <ul>
+      <% @article.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    <ul>
+  </div>
+<% end %>    
+
+
+
+<%= form_for @article do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+  <%= f.label :link %>
+  <%= f.text_field :link %>
+  <%= f.submit :class => 'btn btn-primary' %>
+<% end %>

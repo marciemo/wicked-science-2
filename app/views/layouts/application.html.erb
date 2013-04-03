@@ -1,0 +1,27 @@
+<head>
+  <title>WickedScience | <%= yield :title %></title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+
+  <% if current_user %>
+    Logged in as <%= current_user.email %>.
+    <%= link_to "Log Out", logout_path %>
+  <% else %>
+    <%= link_to "Sign Up", signup_path %> or
+    <%= link_to "Log In", login_path %>
+  <% end %>
+</head>
+
+<body>
+  <div class="container">
+    <% if flash[:notice] %>
+      <div class="alert alert-info"><%= flash[:notice] %></div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class_"alert alert-error"><%= flash[:alert] %></div>
+    <% end %>
+
+    <%= yield %>
+  </div>
+</body>
