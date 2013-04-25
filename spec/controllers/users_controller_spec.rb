@@ -6,7 +6,6 @@ describe UsersController do
        let(:valid_attributes) {{email: "dorrit@riseup.net", password: 'testword', password_confirmation: 'testword'}}
        let(:valid_parameters) {{:user => valid_attributes}}
 
-
        before {post :create, valid_parameters}
        it {should redirect_to action: "index"}
      end
