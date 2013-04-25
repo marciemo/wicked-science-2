@@ -3,7 +3,7 @@ require 'spec_helper'
 describe UsersController do
    context 'POST create' do
      context 'with valid parameters' do 
-       let(:valid_attributes) {{email: "dorrit@riseup.net", password: 'kinky', password_confirmation: 'kinky'}}
+       let(:valid_attributes) {{email: "dorrit@riseup.net", password: 'testword', password_confirmation: 'testword'}}
        let(:valid_parameters) {{:user => valid_attributes}}
 
 
