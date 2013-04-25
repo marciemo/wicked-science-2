@@ -10,7 +10,7 @@ describe UsersController do
        it {should redirect_to action: "index"}
      end
 
-     context 'with invalid parameter' do
+     context 'with invalid parameters' do
        let(:invalid_attributes) {{email: '', password: '', password_confirmation: ''}}
        let(:invalid_parameters) {{:user => invalid_attributes}}
 
